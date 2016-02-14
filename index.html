@@ -13,34 +13,8 @@
 
   <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
-  <script>
-  $(document)
-    .ready(function() {
-
-      // fix main menu to page on passing
-      $('.main.menu').visibility({
-        type: 'fixed'
-      });
-      $('.overlay').visibility({
-        type: 'fixed',
-        offset: 80
-      });
-
-      // lazy load images
-      $('.image').visibility({
-        type: 'image',
-        transition: 'vertical flip in',
-        duration: 500
-      });
-
-      // show dropdown on hover
-      $('.main.menu  .ui.dropdown').dropdown({
-        on: 'hover'
-      });
-    })
-  ;
-  </script>
-
+  <script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js"></script>
+  
   <style type="text/css">
 
   body {
@@ -156,6 +130,7 @@
     </div>
     <div class="ui segment">
       <h2 class="ui left floated header">Email Content</h2>
+      <div class="ui right floated small button" data-clipboard-target="#email-body" id="copy-button">Copy Email</div>
       <div class="ui clearing divider"></div>
         <div class="ui message" id="email-body">
           <u><strong>Dear Committee members,</strong></u>
@@ -248,5 +223,62 @@
     $("#send-anchor").attr('href', mailToAttr)
   });
 </script-->
+<script>
+  $(document)
+    .ready(function() {
+
+      // fix main menu to page on passing
+      $('.main.menu').visibility({
+        type: 'fixed'
+      });
+      $('.overlay').visibility({
+        type: 'fixed',
+        offset: 80
+      });
+
+      // lazy load images
+      $('.image').visibility({
+        type: 'image',
+        transition: 'vertical flip in',
+        duration: 500
+      });
+
+      // show dropdown on hover
+      $('.main.menu  .ui.dropdown').dropdown({
+        on: 'hover'
+      });
+    })
+  ;
+  </script>
+  <script>
+    var btn = document.getElementById('copy-button');
+    var clipboard = new Clipboard(btn);
+
+    // hide the popup when clicked outside of the element
+    $(document).click(function(event) { 
+        if(!$(event.target).closest('#copy-button').length && !$(event.target).is('#copy-button')) {
+            $('#copy-button').popup('hide');
+        }        
+    });
+
+    clipboard.on('success', function(e) {
+        console.log(e);
+        $('#copy-button').popup({
+            on : 'none',
+            position : 'top center',
+            title : 'Copied!' 
+        });
+        $('#copy-button').popup('show');
+    });
+    clipboard.on('error', function(e) {
+        console.log(e);
+        $('#copy-button').popup({
+            on : 'none',
+            position : 'top center',
+            title : 'Press Ctrl + C to copy!' 
+        });
+        $('#copy-button').popup('show');
+    });
+  </script>
 </body>
 </html>
