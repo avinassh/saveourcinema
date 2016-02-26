@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Save Our Cinema!</title>
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
+
+  <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix main menu to page on passing
+      $('.main.menu').visibility({
+        type: 'fixed'
+      });
+      $('.overlay').visibility({
+        type: 'fixed',
+        offset: 80
+      });
+
+      // lazy load images
+      $('.image').visibility({
+        type: 'image',
+        transition: 'vertical flip in',
+        duration: 500
+      });
+
+      // show dropdown on hover
+      $('.main.menu  .ui.dropdown').dropdown({
+        on: 'hover'
+      });
+    })
+  ;
+  </script>
+
+  <style type="text/css">
+
+  body {
+    background-color: #FFFFFF;
+  }
+  .main.container {
+    margin-top: 2em;
+  }
+
+  .main.menu {
+    margin-top: 4em;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    transition:
+      box-shadow 0.5s ease,
+      padding 0.5s ease
+    ;
+  }
+  .main.menu .item img.logo {
+    margin-right: 1.5em;
+  }
+
+  .overlay {
+    float: left;
+    margin: 0em 3em 1em 0em;
+  }
+  .overlay .menu {
+    position: relative;
+    left: 0;
+    transition: left 0.5s ease;
+  }
+
+  .main.menu.fixed {
+    background-color: #FFFFFF;
+    border: 1px solid #DDD;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  }
+  .overlay.fixed .menu {
+    left: 800px;
+  }
+
+  .text.container .left.floated.image {
+    margin: 2em 2em 2em -4em;
+  }
+  .text.container .right.floated.image {
+    margin: 2em -4em 2em 2em;
+  }
+
+  .ui.footer.segment {
+    margin: 5em 0em 0em;
+    padding: 5em 0em;
+  }
+  </style>
+
+</head>
+<body>
+
+  <!--div class="ui main text container">
+    <h1 class="ui header">Sticky Example</h1>
+    <p>This example shows how to use lazy loaded images, a sticky menu, and a simple text container</p>
+  </div-->
+
+
+  <div class="ui borderless main menu">
+    <div class="ui text container">
+      <a href="/" class="header item">
+        <!--img class="logo" src="assets/images/logo.png"-->
+        #SaveOurCinema
+      </a>
+      <div class="right menu">
+        <a href="links.html" class="active item">History</a>
+        <a href="links.html" class="item">External Links</a>
+      </div>
+      <!--a href="#" class="ui right floated dropdown item">
+        Dropdown <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item">Link Item</div>
+          <div class="item">Link Item</div>
+          <div class="divider"></div>
+          <div class="header">Header Item</div>
+          <div class="item">
+            <i class="dropdown icon"></i>
+            Sub Menu
+            <div class="menu">
+              <div class="item">Link Item</div>
+              <div class="item">Link Item</div>
+            </div>
+          </div>
+          <div class="item">Link Item</div>
+        </div>
+      </a-->
+    </div>
+  </div>
+
+  <div class="ui text container">
+    <center><img src="censored.png" class="ui tiny circular image"></center>
+    <h1 class="ui header huge center aligned">History of Film Censorship - A Timeline</h1>
+      <div class="ui segment"><p>1918 - Cinematograph Act was first passed during the British Raj. <a href="http://www.vakilno1.com/bareacts/laws/the-cinematograph-act-1918.html">(Source)</a></p></div>
+      <div class="ui segment"><p>1920 - Board of censors were established in Bombay, Calcutta, Madras and Rangoon. Regional censor boards were independent of each other.</p></div>
+      <div class="ui segment"><p>1921- Regional censor board of Madras banned <i>Bhakta Vidur</i> making it the first movie to be banned on Indian soil. The movie was banned due to the protagonist having resemblance to Mahatma Gandhi. <a href="https://books.google.com/books?id=UAd_AgAAQBAJ&lpg=PP1&pg=PT87#v=onepage&q&f=false">(Source)</a></p></div>
+      <div class="ui segment"><p>1927 - Indian Cinematograph Committee was setup by the British Raj to regulate films due to many complaints from different quarters. To this day, the ideology of CBFC, has remained the same – that population of India isn't mature enough to have unfettered access to information. <a href="https://archive.org/details/reportoftheindia030105mbp">(Source)</a></p>
+      <p>The report quotes a Bishop who said "The majority of the films, which are chiefly from America, are of sensational and daring murders, crimes, and divorces, and, on the whole, degrade the white women in the eyes of the Indians."</p>
+      <p>The committee disagreed by saying  "In the forefront of our report, however, we desire to place on record our unanimous conviction that the general effect of the Western films in India is not evil, but, on, the whole, is good. India is essentially a conservative country, possibly an ultra-conservative country. We are satisfied that the Western films, in spite of their defects, have an educational value for the people of India. They tend to open the eyes of the uneducated to other and more advanced conditions of life and to give them some idea, however imperfect, of conditions in other countries; they tend to broaden their minds and widen their outlook."</p>
+      <p>On topic of censorship they concluded - "it has been proposed in some quarters that the scope of censorship should be extended and that films should be censored not only on moral and social grounds but on artistic grounds as well; and that films which do not come up to the required standard of artistic excellence should be debarred from exhibition. We are aware that such a practice is in vogue in certain countries, but we do not consider that it is either practicable or justifiable to make one man or one body of men the arbiter of taste for a whole population, nor is it desirable in the present condition of the trade in this country." But they didn't go as far as to not have censorship, they believed that India, as a country, is not mature enough to not have censorship.</p></div>
+      <div class="ui segment"><p>1939 - Tamil movie <i>Thyagabhoomi</i> was banned 22 weeks after its release for propaganda. The movie was accused of supporting the Indian independence movement. <a href="http://www.thehindu.com/todays-paper/tp-features/tp-cinemaplus/article3022684.ece">(Source)</a></p></div>
+      <div class="ui segment"><p>1954 – About 13,000 women petition Prime Minister Nehru fearing obscenity in movies, they claimed movies encourage "precocious sex habits." <a href="http://www.bbc.com/news/magazine-22349712">(Source)</a></p></div>
+      <div class="ui segment"><p>1959 - <i>Neel Akasher Neechey</i>, a movie by Mrinal Sen, was banned for its political overtones for two years. This is the first movie to be banned in Independent India. Movie revolves around a friendship between a Bengali women and a Chinese migrant. <a href="http://www.ingentaconnect.com/content/intellect/ac/2012/00000023/00000002/art00008">(Source)</a></p></div>
+      <div class="ui segment"><p>1968 – An inquiry committee on Film censorship, headed by Justice G. D. Khosla was setup. The committee recommended an independent CBFC, and recommended no interference from the goverement. The report states “A film must be taken as a whole, evaluated as a single integrated work of art or entertainment. If, in telling the story, it is logical, relevant or necessary to depict a passionate kiss or a nude human figure, there should be no question of excluding the shot, provided the theme is handled with delicacy and feeling, aiming at aesthetic expression and avoiding all suggestion of prurience or lasciviousness.” This report was ridiculed when it was presented in the parliament and AIR aired segments ridiculing the committee's recommendations. None of the recommendations were implemented.  <a href="http://indianexpress.com/article/opinion/columns/the-villain-in-the-picture/">(Source)</a></p></div>
+      <div class="ui segment"><p>1971 – The case of K. A. Abbas Vs. The Union of India justified the case of film censorship and to have a certification agency that has the authority to censor movies before its release. Justice Hidayatullah states "A person reading a book or other writing or hearing a speech or viewing a painting or sculpture is not so deeply stirred as by seeing a motion picture. Therefore the treatment of the latter on a different footing is also a valid classification."  The case was regarding the documentary The tale of four cities which was initially classified as "A," Abbas chanllanged film censorship as being violative of the fundamental right to freedom of speech. The court did not agree with Abbas but ordered CBFC to change rating of the documentary from "A" to "U" rating. <a href="http://indiankanoon.org/doc/1719619/">(Source)</a></p></div>
+      <div class="ui segment"><p>1983 - In addition to "U" and "A" CBFC added categories "U/A" and "S"</p></div>
+      <div class="ui segment"><p>1988 – Gulzar's film <i>Libaas</i> was refused certification by the CBFC citing its adult themes of extra-marital affairs. The film premiered in India in 2014. <a href="http://www.goanews.com/news_disp.php?newsid=5441">(Source)</a></p></div>
+      <div class="ui segment">2002 – Vijay Anand was forced to resign from the chair of CBFC for suggesting revamp of Cinematograph Act. Among his suggestions:
+      <ol>
+        <li>To have a new rating "XA" for adult themed movies with sexually explicit scenes allowed to play in select theaters.</li>
+        <li>To make CBFC an autonomous body and to make nominations based on professional expertise rather than political affiliations.</li>
+        <li>To ensure that half of the board members were between the ages of 20 and 30.</li>      
+      </ol>
+      Then I&amp;B minister, Sushma Swaraj, publicly opposed the suggestions and replace Vijay Anand with Arvind Trivedy, a former BJP MP who is best known for playing Ravana in the popular serial Ramayana. <a href="http://india.indymedia.org/en/2002/09/2104.shtml">(Source)</a></p></div>
+      <div class="ui segment"><p>2004 – The newly elected government of UPA, as a part of "detoxification" campaign, decided to remove Anupam Kher as the Chairman of CBFC. He was replaced by Sharmila Tagore. <a href="http://www.frontline.in/static/html/fl2123/stories/20041119008112600.htm">(Source)</a></p></div>
+      <div class="ui segment"><p>2006 – CBFC appealed to the I&amp;B ministry to have a rating of either "A+" or "X" to allow for nudity in movies. It also requested removing the ban on A rated movies on TV. The I&amp;B ministry did not implement any of the recommendations of the CBFC. <a href="http://www.frontline.in/static/html/fl2123/stories/20041119008112600.htm">(Source)</a></p></div>
+      <div class="ui segment"><p>2013 – A committee headed by Justice Mukul Mudgal was formed to submit a report on CBFC and update the Cinematograph Act. The committee recommended a minimum qualification requirement to be a member of the board. It also recommended that states should not arbitrarily ban movies and offered checks and balances limit the powers of states. None of the committee's recommendations were implements till date. <a href="http://www.thehindu.com/news/national/mudgal-panel-submits-report-on-governing-cinema/article5218032.ece">(Source)</a></p></div>
+  </div>
+  <div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+      <div class="ui stackable inverted divided grid">
+        <!--div class="three wide column">
+          <h4 class="ui inverted header">Group 1</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Link One</a>
+            <a href="#" class="item">Link Two</a>
+            <a href="#" class="item">Link Three</a>
+            <a href="#" class="item">Link Four</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Group 2</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Link One</a>
+            <a href="#" class="item">Link Two</a>
+            <a href="#" class="item">Link Three</a>
+            <a href="#" class="item">Link Four</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Group 3</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Link One</a>
+            <a href="#" class="item">Link Two</a>
+            <a href="#" class="item">Link Three</a>
+            <a href="#" class="item">Link Four</a>
+          </div>
+        </div-->
+        <!--div class="seven wide column">
+          <h4 class="ui inverted header">Footer Header</h4>
+          <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+          <center><img class="ui medium circular image" src="//semantic-ui.com/images/wireframe/square-image.png"><center>
+        </div-->
+      </div>
+      <!--div class="ui inverted section divider"></div-->
+      <!--div class="ui horizontal inverted small divided link list">
+        <a class="item" href="#">Site Map</a>
+        <a class="item" href="#">Contact Us</a>
+        <a class="item" href="#">Terms and Conditions</a>
+        <a class="item" href="#">Privacy Policy</a>
+      </div-->
+      <p>Built with lots of love by cine lovers from India | <a href="https://twitter.com/saveourcinemain">@saveourcinemain</a> | <a href="https://github.com/avinassh/saveourcinema">Github</a></p>
+    </div>
+  </div>
+  <!--Begin google analytics code-->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-73719283-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!--End google analytics code-->
+</body>
+</html>
